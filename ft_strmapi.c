@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	modified_s = NULL;
 	if (s && f)
 	{
-		modified_s = (char *)ft_calloc((ft_strlen(s) + 1), sizeof(char));
+		modified_s = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 		if (!modified_s)
 			return (NULL);
 		i = 0;
@@ -29,6 +29,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 			modified_s[i] = f(i, s[i]);
 			i++;
 		}
+		modified_s[i] = '\0';
 	}
 	return (modified_s);
 }

@@ -80,8 +80,5 @@ char	**ft_split(char const *s, char c)
 	arr = (char **)malloc((count_sub_s(s, c) + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
-	arr = handle_s_split(arr, s, c);
-	if (!arr)
-		return (NULL);
-	return (arr);
+	return (handle_s_split(arr, s, c));
 }
