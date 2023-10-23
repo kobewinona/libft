@@ -14,10 +14,9 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	c;
 	long	temp_n;
 
-	temp_n = n;
+	temp_n = (long)n;
 	if (n < 0)
 	{
 		write(fd, "-", 1);
@@ -26,12 +25,8 @@ void	ft_putnbr_fd(int n, int fd)
 	if (temp_n >= 10)
 	{
 		ft_putnbr_fd((temp_n / 10), fd);
-		c = (temp_n % 10) + '0';
-		write(fd, &c, 1);
+		ft_putnbr_fd((temp_n % 10), fd);
 	}
 	else
-	{
-		c = temp_n + '0';
-		write(fd, &c, 1);
-	}
+		ft_putchar_fd((temp_n + '0'), fd);
 }
