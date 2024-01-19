@@ -1,0 +1,17 @@
+# IDE
+.vscode
+../../.idea
+*.dSYM
+
+# program
+a.out
+
+# archive
+*.a
+
+#objects
+obj
+
+# rest
+.DS_store
+*.txt
